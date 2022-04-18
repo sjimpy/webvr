@@ -1,0 +1,430 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta charset="utf-8">
+    <title>vr minor</title>
+    <link rel="stylesheet" href="./style.css">
+    <script src="https://aframe.io/releases/1.3.0/aframe.min.js"></script>
+    <script src="https://unpkg.com/aframe-environment-component@1.3.1/dist/aframe-environment-component.min.js"></script>
+<script src="https://unpkg.com/aframe-orbit-controls@1.2.0/dist/aframe-orbit-controls.min.js"></script>
+    <!-- <script src="https://rawgit.com/mayognaise/aframe-mouse-cursor-component/master/dist/aframe-mouse-cursor-component.min.js"></script> -->
+  </head>
+  <body>
+    <nav>
+      <a href="#about"><p>About</p></a>
+      <a href="#assets"><p>Assets</p></a>
+      <a href="#uxui"><p>UX-UI Design</p></a>
+      <a href="#development"><p>Development</p></a>
+      <a href="#visual"><p>Visual Design</p></a>
+      <span id="content">Table of contents</span>
+    </nav>
+    <div id="chapters">
+    </div>
+    <div id="maincontainer">
+      <div id="contentWidth">
+        <a-scene environment="groundColor:  #f6d7b0;  groundColor2:  #f2d2a9;  playArea:  0.5;  dressingVariance:  [object Object]" inspector="" keyboard-shortcuts="" screenshot="" vr-mode-ui="enabled:  false" device-orientation-permission-ui="enabled: false" fog="color: #74ab90; far: 100; density: 0" visible="" cursor="rayOrigin: mouse" raycaster="objects: #ball1">
+          <a-sky color="#ECECEC" material="" geometry=""></a-sky>
+
+          <!-- adding the camera to the scene -->
+          <!-- <a-entity animation="property: position; to: -10 1.6 0; loop: true; yoyo:true; dur: 10000;begin:onstart;" id="camera" camera look-controls position="0 1.8 0" mouse-cursor> -->
+          <!-- <a-entity animation="property: rotation; to: 0 360 0; loop: true; dur: 100000; easing:	linear;" id="camera" camera position="0 1.8 0" mouse-cursor> -->
+          <a-entity
+                    id="camera"
+                    camera
+                    orbit-controls="
+                      autoRotate: true;
+                      enableDamping: false;
+                      rotateSpeed:1;
+                      target: 0 0 0;
+                      minDistance: 15;
+                      maxDistance: 50;
+                      initialPosition: 0 2 5"
+                      mouse-cursor=""
+                      position="0 0 0">
+                </a-entity>
+
+
+          <!-- adding assets to the program -->
+          <a-assets>
+            <a-asset-item id="surfboard5" src="./models/surfboard5.obj"></a-asset-item>
+            <a-asset-item id="surfboard5-mtl" src="./models/surfboard5.mtl"></a-asset-item>
+
+            <a-asset-item id="schep" src="./models/schep.obj"></a-asset-item>
+            <a-asset-item id="schep-mtl" src="./models/schep.mtl"></a-asset-item>
+          </a-assets>
+
+          <!-- loading the assets inside the enviroment -->
+          <a-entity id="a-surfboard5" position="0 .7 -5" rotation="0 45 0" obj-model="obj: #surfboard5"></a-entity>
+          <a-entity id="a-schep" position="-5 .4 -5" scale=".05 .05 .05" rotation="-90 -135 0" obj-model="obj: #schep"></a-entity>
+        </a-scene>
+
+        <section class="world3d" id="focusOnHome">
+          <span class="anchors" id="home"></span>
+          <div class="">
+            <h1>Minor XR</h1>
+            <p>By Jimmy Dekker</p>
+          </div>
+          <a href="#about" class="cta">start reading</a>
+        </section>
+
+        <section id="aboutcont">
+          <span class="anchors" id="about"></span>
+          <div class="textcontainer">
+
+            <h2>About</h2>
+
+            <p>
+              My name is Jimmy Dekker. I am currently 24 years old and in the 3rd year of the Communication and Multimedia Design course. My specialty is web development. For my minor I chose XR development because I find VR/XR very interesting and I would like to learn more about the developments. In addition, I would like to learn 3D modeling and I am very curious about the VR/XR developments surrounding web development.
+              <br>
+              <br>
+              This page is about my personal learning path during this minor. In this I show my developments within the categories:
+              <br>
+              <a href="#assets">Assets</a>
+              <a href="#uxui">UX UI Design</a>
+              <a href="#development">Development</a>
+              <a href="#visual">Visual Design</a>
+              <br>
+              <br>
+              If you want to know more about me and my career you can find it on my personal portfolio.
+            </p>
+            <a class="cta" href="https://jimmydekker.nl/">My portfolio</a>
+
+
+            <h3>Our team: Reality-Shift</h3>
+            <p>
+              Reality Shift consists of five students studying at the Amsterdam University of Applied Sciences. Our goal is to provide an attractive and functioning VR experience. To deliver good quality, Reality Shift has three important core values: quality, creativity and functionality.
+              <br><br>
+              Reality Shift has a diverse team, people who all have different qualities. However, our qualities have something in common, which is that we like to convert our creativity and ideas into a tangible experience.
+              <br><br>
+              Customer satisfaction is number one. That is why we conduct interim discussions so that your insights can be applied in the experience.
+              <br><br>
+              To keep our teamwork clear, we have created a webpage with an overview of the team members, project information and links to all our work.
+            </p>
+            <a class="cta" href="https://reality-shift.nl/">Check out our team</a>
+
+
+            <h3>Pressure Cooker</h3>
+            <p>
+              To get the minor off to a good start, we started with a 2 week pressure cooker. In this we were introduced to the VR/XR world and we were introduced to the main tools and tricks that we will use in the coming semester.
+              <br><br>
+              The Pressurecooker was therefore a short individual project. Want to know more about this? check out my Pressure cooker page.
+            </p>
+            <a class="cta" href="https://jimmydekker.nl/preview-xr-pressurecooker/">Check out my Pressure Cooker</a>
+
+
+            <h3>Learning Goals</h3>
+            <p>
+              To keep up with my developments within the minor, we have drawn up SMART learning objectives. With this you specify your learning objective Specific, Measurable, Achievable, Relevant and Time-Bound.
+            </p>
+
+            <h4>Goal 1</h4>
+            <p>At the end of this semester I want to be able to independently make 3d models that can be used in VR and therefore not too many triangles. I want to get the knowledge for this learning goal from the courses of teachers, information on the internet and the experience of my classmates.</p>
+            <br>
+            <ul>
+              <li><span>specific: </span>I want to learn to independently make 3d models and textures.</li>
+              <li><span>Measurable: </span>The 3d models must be usable on a quest 2 so no more than 50,000 triangles per object.</li>
+              <li><span>Achievable: </span>Through the lessons at school, my own research and the help of my project group.</li>
+              <li><span>Relevant: </span>I want to learn this because we need models for our experience and to experiment with my 3d printer.</li>
+              <li><span>Time-Bound: </span>At the end of this semester.</li>
+            </ul>
+
+
+            <h4>Goal 2</h4>
+            <p>I want to learn how web vr development works through desk research and experimentation. I want to be able to load at least 1 self-made model including the textures. I would like to learn this to expand my development knowledge and to be able to display my models in a browser.</p>
+            <br>
+            <ul>
+              <li><span>specific:</span> I want to learn how to use 3d (vr) in web development.</li>
+              <li><span>Measurable:</span> This learning objective has been achieved when I have been able to make a 3d world with at least 1 homemade model including textures.</li>
+              <li><span>Achievable:</span> Through desk research.</li>
+              <li><span>Relevant:</span> I want to learn this to expand my web development knowledge and to be able to show my models on a browser.</li>
+              <li><span>Time-Bound:</span> At the end of this semester.</li>
+            </ul>
+
+
+            <h4>Goal 3</h4>
+            <p>I want to learn how to design a map that conveys the desired atmosphere through lessons and tests. The map must be substantiated and I want to learn this so that I know how to create beautiful environments before the end of this semester.</p>
+            <br>
+            <ul>
+              <li><span>specific:</span> I want to learn how to design a map that exudes the desired atmosphere.</li>
+              <li><span>Measurable:</span> The map must be substantiated and must have been thought through.</li>
+              <li><span>Achievable:</span> Through Emma's lessons and through AB testing.</li>
+              <li><span>Relevant:</span> I want to learn this so that I can participate in the design of our vr experience.</li>
+              <li><span>Time-Bound:</span> At the end of this semester.</li>
+            </ul>
+          </div>
+        </section>
+
+
+        <!-- <section  class="world3d">
+
+        </section> -->
+
+
+        <section>
+          <span class="anchors" id="assets"></span>
+          <div class="textcontainer">
+            <h2>Assets</h2>
+            <p>
+              The assets category is mainly about developing 3d models and textures.
+            </p>
+            <h3>sprint 1</h3>
+            <p>
+              In terms of assets, I mainly worked on my first 3d model with texture during this sprint.
+            </p>
+            <h4>Shovel model</h4>
+            <p>
+              For the shovel I started looking for inspiration on the internet. After a short search I came across the following video:<a href="https://www.youtube.com/watch?v=veMSu9VeIoQ&t=134s">Blender 2.8: Modeling a Shovel</a>. I followed this tutorial until 2:14 after which I made the rest of the shovel myself by means of extrudes, scales and merching of vertexes:
+            </p>
+            <img src="./assets/schep1.png" class="img600">
+            <p>
+              In the end I had a well-modelled scoop, unfortunately with too many triangles. I solved this by using dissolve edges on unnecessary edges:
+            </p>
+            <img src="./assets/schep2.png" class="img600">
+            <p>Finally I had a shovel with only 1,974 triangles and ready to texture:</p>
+            <img src="./assets/schep3.png" class="img600">
+            <h4>Shovel model with sand</h4>
+            <p>Om straks zand te kunnen opscheppen hebben we ook een model nodig met zand op de schep. Dit heb ik gedaan door een icosphere toe te voegen aan de scene en die te halveren:</p>
+            <img src="./assets/sand1.png" class="img600">
+            <p>vervolgens heb ik de z as van de sphere kleiner gemaakt en op de gewenste mannier op de schep gepositioneerd:</p>
+            <img src="./assets/sand2.png" class="img600">
+            <h4>textures</h4>
+            <p>
+              Om een juiste uv map te krijgen ben ik begonnen met het markeren van bepaalde edges zodat de UV map op de juiste mannier unwrapped kan worden:
+            </p>
+            <img src="./assets/texture1.png" class="img600">
+            <p>
+              Vervolgens heb ik het model geselecteerd en op unwrap gedrukt:
+            </p>
+            <img src="./assets/texture2.png" class="img400">
+            <p>
+              Deze template heb ik vervolgens gebruikt om hout texture en een rode kleur toe te voegen aan het model, Dit heb ik gedaan door een base color toe te voegen op basis van een image:
+            </p>
+            <img src="./assets/texture3.png" class="img300">
+            <p>
+              Dit was het eindresutlaat van mijn eerste 3d model:
+            </p>
+          </div>
+        </section>
+        <section  class="world3d" id="focusOnSchep">
+
+        </section>
+        <section>
+          <div class="textcontainer">
+            <h3>Sprint 2</h3>
+            <p>
+              Voor de categorie assets ben ik deze sprint voornamelijk bezig geweest met het modelen van 5 verschillende surfboards.
+            </p>
+            <h4>Surfboard inspiration</h4>
+            <p>
+              Om de juiste vorm en verschillende modellen van de surfboarden te krijgen ben ik op zoek gegaan naar welke modellen er zijn. uiteingelijk heb ik deze afbeelding gebruikt om de vormen te maken.
+            </p>
+            <img src="./assets/surfvorm.png" class="img600">
+            <h4>Surfboards</h4>
+            <p>ik ben begonnen met een 2d overlay over de surfboarden om ze vervolgens te extruden naar de juiste dikte. Ook deze heb ik bepaald doormiddel van referentie afbeeldingen. Na deze stap had ik 5 platte borden:</p>
+            <img src="./assets/borden5.png" class="img600">
+            <p>Natuurlijk zijn surfboarden niet helemaal recht en heb ik ze allemaal een klein beetje krom getrokken:</p>
+            <img src="./assets/kromboard1.png" class="img100">
+            <img src="./assets/kromboard2.png" class="img100">
+            <h4>Surfboard fins</h4>
+            <p>Voor de vinnen leek het mij het makkelijkts om een model te maken en die te hetgebruiken in verschillende formaten op alle borden. Ook bij deze stap ben ik weer begonnen met een refference afbeeldingen om de vormen goed te krijgen:</p>
+            <img src="./assets/finoverlay.png" class="img600">
+            <p>vervolgens heb ik alle vinnen aan de borden toegevoegd en samengesmolten tot 1 object:</p>
+            <img src="./assets/boardswithfins.png" class="img600">
+            <h4>Surfboard uv maps</h4>
+            <p>Om de juiste Uv maps te krijgen heb ik alle naden weer op de zelfde mannier gemarkeerd als bij het schep model. Ik had bij deze modellen alleen wel moeite met de vinnen, uiteindelijk was dit geen probleem omdat die toch een solide kleur moesen worden.</p>
+            <img src="./assets/uvmapboard.png" class="img400">
+            <h4>Surfboard textures</h4>
+            <p>vervolgens ben ik op internet op zoek gegaan naar verschillende surfboard designs. Voor elk bord heb ik een ander design gemaakt:</p>
+            <img src="./assets/board1.png" class="img190">
+            <img src="./assets/board2.png" class="img190">
+            <img src="./assets/board3.png" class="img190">
+            <img src="./assets/board4.png" class="img190">
+            <img src="./assets/board5.png" class="img190">
+            <h4>Het resultaat:</h4>
+          </div>
+        </section>
+        <section  class="world3d"  id="focusOnSurf">
+
+        </section>
+
+
+
+
+
+        <section>
+          <span class="anchors" id="uxui"></span>
+          <div class="textcontainer">
+            <h2>UX-UI Design</h2>
+            <p>
+              The UX-UI design category is mainly about designing specific interactions between the user and the vr experience.
+            </p>
+            <h3>sprint 1</h3>
+            <p>
+              During this sprint I was mainly busy brainstorming and developing our idea through storyboards.
+            </p>
+            <h4>Brainstorm</h4>
+            <p>De brainstom hebben we met het gehele team gedaan, dit deden we doormiddel van de crazy 8. Daarna hebben we alle ideeën verder uitgewerkt en een concept op de glazen wand getekend.</p>
+            <img src="./assets/brainstorm.jpeg" class="img800">
+            <h4>Storyboard 1</h4>
+            <p>vervolgens ben ik aan de slag gegaan met het uitwerken van de volgende 2 storyboards.</p>
+            <img src="./assets/storyboard1.png" class="img800">
+            <h4>Storyboard 2 (final concept)</h4>
+            <img src="./assets/storyboard2.png" class="img800">
+            <a href="https://docs.google.com/document/d/19tgaW1zwoFaErF1rK0PQf5J4SWy01TQ1PYdU3jxXDps/edit#heading=h.vk4vhpiwr52v" class="cta">check the user journey</a>
+          </div>
+        </section>
+
+        <section>
+          <div class="textcontainer">
+            <h3>sprint 2</h3>
+            <p>
+              voor deze sprint wilde ik er achter komen op welke afstanden teksten en objecten nog goed zijn te lezen in vr.
+            </p>
+            <h4>distance checker</h4>
+            <p>
+              Omdat we in onze ervaring de blok etalages in verschillende formaten willen weergeven: medium in de blok muur, klein als je hem pakt en groot als hij actief is bij de catwalk.
+              Leek het mij handig om een klein experimentje te doen en te testen op welke afstanden sommige formaten blokken te groot of te klein waren. Dit heb ik gemaakt in een apparte scene in unity.
+            </p>
+            <img src="./assets/distance.png" class="img600">
+            <h4>model</h4>
+            <p>Om te beginnen heb ik het blok model een beetje aangepast met letters en deze in 6 verschillende formaten gescaled.</p>
+            <img src="./assets/dozen6.png" class="img600">
+            <h4>tests</h4>
+            <p>voor de test hebben we meerdere mensen in deze scene gezet en de instructie gegeven om de kleur en afstand te zeggen op het moment dat de tekst tussen de groene en rode lijn leesbaar is.</p>
+            <h4>result</h4>
+            <p>
+              For some reason the results are blocked by google, im still in contact with the service team trying to recover them.
+            </p>
+            <img src="./assets/error.png" class="img600">
+          </div>
+        </section>
+
+
+
+
+
+        <section>
+          <span class="anchors" id="development"></span>
+          <div class="textcontainer">
+            <h2>Development</h2>
+            <p>
+              The development category is mainly about building the vr experience.
+            </p>
+            <h3>sprint 1</h3>
+            <p>
+              For development I have been busy recording the animation for the mannequin, setting up a webvr environment, making the team website and uploading my work on the github branch.
+            </p>
+            <h4>website workshop</h4>
+            <p>Om onze persoonlijke ontwikkeleling binnen dit project bij te houden moeten we deze portfolio website bijhouden. Om de rest van het team verder te helpen met de bouw van de website heb ik aangeboden om een dag een workshop te geven over de basis opzet van een website. Dit hebben we gedaan doormiddel van HTML CSS en JS. Daarbij heb ik een aantal links doorgestuurd die ze tijdens het verder bouwen van de website kunnen helpen.</p>
+            <img src="./assets/code.png" class="img600">
+            <p>Doormiddel van felle kleuren kon ik makkelijk uitleggen hoe de cotnainers in elkaar zitten en hoe het positioneren van de elementen werkt.</p>
+            <img src="./assets/site.png" class="img600">
+            <p>
+              Een aantal van de sites die ik heb meegegeven en heb behandeld als bron zijn:<br>
+              <a href="https://www.w3schools.com/html/html_elements.asp">HTML element overview.</a><br>
+              <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Viewport_meta_tag">Meta viewport tagg.</a><br>
+              <a href="https://www.w3schools.com/css/css_rwd_mediaqueries.asp">Media query's.</a><br>
+              <a href="https://the-echoplex.net/flexyboxes/">Flexboxes</a>
+            </p>
+            <h4>Record mannequin animation</h4>
+            <p>
+              Om de kleding op de mannequins te kunnen animeren en de mannequins over de catwalk te laten lopen hebben we animaties nodig die we kunnen riggen. Dit zijn we gaan doen met het motion tracking suit van <a href="https://neuronmocap.com/content/axis-neuron?gclid=Cj0KCQjwmPSSBhCNARIsAH3cYga07BwCfB8J1AUsCCUmLuDU2PVKRvrgn382gCwdY3DvroUYTHGRR28aAqwXEALw_wcB">Perception Neuron</a>
+              We hebben de quickstart guide gebruikt voor de installatie en het aantekken van het pak:
+            </p>
+            <img src="./assets/terrence.JPG" class="img190">
+            <video src="./assets/terrence.mp4" controls muted autoplay loop poster="./assets/terrence.png" class="img190"></video>
+            <p>
+              En vervolgens het programma zelf uitgevogeld. Uiteindelijk zijn we geindigd met een aantal animaties waaronder:
+            </p>
+            <video src="./assets/rig.mp4" controls muted autoplay loop poster="./assets/rig.png" class="img600"></video>
+            <p>
+              Tijdens de installatie kwamen we er achter dat alle electronische apparaten uit de buurt van het pak moesten zijn. Als we dat niet deden dan werkte bepaalde sensoren niet.
+            </p>
+            <h4>Web vr research</h4>
+            <p>
+              Een van mijn leerdoelen was het leren van web vr, omdat ik dat niet binnen ons project kan doen heb ik besloten om het te gebruiken bij dit portfolio.
+              Om te beginnen ben ik op zoek gegaan naar javascript libraries die helpen bij het maken van een vr website.
+              De voornamelijkste zijn:
+              <a href="#">React VR</a>
+              <a href="#">A-frame </a>
+              and
+              <a href="#">three.js</a>.
+              Uiteindelijk heb ik gekozen voor A-Frame omdat ik we achter kwam dat daar een hele handige inspector bij zit waarin je live de wereld kan ontwerpen. Voor het installeren en gebruiken van de three.js heb ik de volgende tutorial gebruikt:
+              <a href="https://www.youtube.com/watch?v=-Q_FIByQUAI">Aframe Webvr - VR Development Part 1 - Setting Up</a>.<br>
+              Om te leren hoe de inspector en enviroment builder werkt heb ik de volgende video gebruikt:
+              <a href="https://www.youtube.com/watch?v=K_1RdCVuu98">Easy Environment in A-Frame (beginner tutorial)</a>
+              <p>
+                Wil je zien hoe de site in elkaar zit? Bekijk dan de code op Github:
+                <a href="#" class="cta">Bekijk op github</a>
+              </p>
+            </p>
+            <h4>team website</h4>
+            <h4>github with sourcetree</h4>
+          </div>
+        </section>
+
+        <section>
+          <div class="textcontainer">
+            <h3>sprint 2</h3>
+            <p>
+              deze sprint ben ik qua development vooral bezig geweest met het fixen van de webvr experience.
+            </p>
+            <h4>Rotate around objects</h4>
+            <h4>Change camera position on scroll</h4>
+          </div>
+        </section>
+
+        <section>
+          <div class="textcontainer">
+            <h3>sprint 3</h3>
+            <p>
+              hier komt text over dingen die ik in sprint 3 heb gedaan
+            </p>
+            <h4>textures on web models</h4>
+          </div>
+        </section>
+
+
+        <section>
+          <span class="anchors" id="visual"></span>
+          <div class="textcontainer">
+            <h2>Visual Design</h2>
+            <p>
+              The visual category mainly concerns the appearance of the vr experience, such as the map design.
+            </p>
+            <h3>sprint 1</h3>
+            <p>
+              During this sprint I have mainly been working on the basic design of the map, which includes:
+            </p>
+            <h4>colors</h4>
+            <h4>map designs</h4>
+            <h4>moodboard catwalk</h4>
+            <h4>map prototypes</h4>
+          </div>
+        </section>
+
+
+        <section  class="world3d" id="focusOnMaps">
+
+        </section>
+
+
+        <section>
+          <div class="textcontainer">
+            <h3>sprint 3</h3>
+            <p>
+              hier komt tekst voor sprint 3
+            </p>
+            <h4>Assets hunt on location</h4>
+          </div>
+        </section>
+
+      </div>
+    </div>
+
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.9.1/gsap.min.js" integrity="sha512-H6cPm97FAsgIKmlBA4s774vqoN24V5gSQL4yBTDOY2su2DeXZVhQPxFK4P6GPdnZqM9fg1G3cMv5wD7e6cFLZQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="./script.js" charset="utf-8"></script>
+  </body>
+</html>
