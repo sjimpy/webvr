@@ -7,8 +7,13 @@ var scrollDir;
 var homecont = document.getElementById('focusOnHome');
 var focusOnSchep = document.getElementById('focusOnSchep');
 var focusOnSurf = document.getElementById('focusOnSurf');
+var focusOnShoe = document.getElementById('focusOnShoe');
+var focusOnShoe2 = document.getElementById('focusOnShoe2');
+var focusOnShirt = document.getElementById('focusOnShirt');
+var focusOnAll = document.getElementById('focusOnAll');
 
 var activeView = focusOnHome;
+var currentlyInView;
 var scrollDir;
 
 var titlecontainer = document.getElementById('chapters');
@@ -50,39 +55,119 @@ function contentPosCheck() {
   }
 }
 
+setInterval(function () {
+
+}, 100);
+
+
+
 scrollContainer.addEventListener("scroll", function() {
   upOrDown();
-  // console.log(activeView.id);
-  // console.log(focusOnMaps.id);
-  if (checkCameraChangeOnscroll(focusOnMaps)) {
-      console.log("Map time");
-      camera.setAttribute("orbit-controls", "target", "0 10 -5");
-      camera.setAttribute("orbit-controls", "minDistance", "1");
-      camera.setAttribute("orbit-controls", "maxDistance", "5");
-      camera.getObject3D('camera').position.set(0, 2, 5);
+  if (checkCameraChangeOnscroll(focusOnAll)) {
+      activeView = focusOnAll;
+      changeCameraPosition();
+  }
+  else if (checkCameraChangeOnscroll(focusOnShirt)) {
+      activeView = focusOnShirt;
+      changeCameraPosition();
+  }
+  else if (checkCameraChangeOnscroll(focusOnShoe2)) {
+      activeView = focusOnShoe2;
+      changeCameraPosition();
+  }
+  else if (checkCameraChangeOnscroll(focusOnShoe)) {
+      activeView = focusOnShoe;
+      changeCameraPosition();
   }
   else if (checkCameraChangeOnscroll(focusOnSurf)) {
-      console.log("Surf time");
-      camera.setAttribute("orbit-controls", "target", "0 1.5 -5");
-      camera.setAttribute("orbit-controls", "minDistance", "1");
-      camera.setAttribute("orbit-controls", "maxDistance", "5");
-      camera.getObject3D('camera').position.set(0, 2, 5);
+      activeView = focusOnSurf;
+      changeCameraPosition();
   }
   else if (checkCameraChangeOnscroll(focusOnSchep)) {
-      console.log("schep time");
-      camera.setAttribute("orbit-controls", "target", "-5 .4 -5");
-      camera.setAttribute("orbit-controls", "minDistance", "1");
-      camera.setAttribute("orbit-controls", "maxDistance", "5");
-      camera.getObject3D('camera').position.set(0, 2, 5);
+      activeView = focusOnSchep;
+      changeCameraPosition();
   }
   else if (checkCameraChangeOnscroll(focusOnHome)) {
-      console.log("home time");
+      activeView = focusOnHome;
+      changeCameraPosition();
+  }
+});
+
+
+
+changeCameraPosition();
+function changeCameraPosition() {
+  switch (activeView) {
+    case focusOnHome:
+    if (currentlyInView != activeView.id) {
+      currentlyInView = "focusOnHome";
       camera.setAttribute("orbit-controls", "target", "0 0 0");
       camera.setAttribute("orbit-controls", "minDistance", "15");
       camera.setAttribute("orbit-controls", "maxDistance", "50");
       camera.getObject3D('camera').position.set(0, 2, 5);
+    }
+    break;
+
+    case focusOnSchep:
+    if (currentlyInView != activeView.id) {
+      currentlyInView = "focusOnSchep";
+      camera.setAttribute("orbit-controls", "target", "4 .8 -4");
+      camera.setAttribute("orbit-controls", "minDistance", "1");
+      camera.setAttribute("orbit-controls", "maxDistance", "5");
+      camera.getObject3D('camera').position.set(0, 2, 5);
+    }
+    break;
+
+    case focusOnSurf:
+    if (currentlyInView != activeView.id) {
+      currentlyInView = "focusOnSurf";
+      camera.setAttribute("orbit-controls", "target", "4 2 4");
+      camera.setAttribute("orbit-controls", "minDistance", "2");
+      camera.setAttribute("orbit-controls", "maxDistance", "5");
+      camera.getObject3D('camera').position.set(0, 2, 5);
+    }
+    break;
+
+    case focusOnShirt:
+    if (currentlyInView != activeView.id) {
+      currentlyInView = "focusOnShirt";
+      camera.setAttribute("orbit-controls", "target", "-4 1 -4");
+      camera.setAttribute("orbit-controls", "minDistance", "1");
+      camera.setAttribute("orbit-controls", "maxDistance", "2");
+      camera.getObject3D('camera').position.set(0, 3, 5);
+    }
+    break;
+
+    case focusOnShoe:
+    if (currentlyInView != activeView.id) {
+      currentlyInView = "focusOnShoe";
+      camera.setAttribute("orbit-controls", "target", "-5 .15 4");
+      camera.setAttribute("orbit-controls", "minDistance", "1");
+      camera.setAttribute("orbit-controls", "maxDistance", "2");
+      camera.getObject3D('camera').position.set(0, 3, 5);
+    }
+
+    case focusOnShoe2:
+    if (currentlyInView != activeView.id) {
+      currentlyInView = "focusOnShoe2";
+      camera.setAttribute("orbit-controls", "target", "-3 .15 5");
+      camera.setAttribute("orbit-controls", "minDistance", "1");
+      camera.setAttribute("orbit-controls", "maxDistance", "2");
+      camera.getObject3D('camera').position.set(0, 3, 5);
+    }
+    break;
+
+    case focusOnAll:
+    if (currentlyInView != activeView.id) {
+      currentlyInView = "focusOnAll";
+      camera.setAttribute("orbit-controls", "target", "0 0 0");
+      camera.setAttribute("orbit-controls", "minDistance", "10");
+      camera.setAttribute("orbit-controls", "maxDistance", "15");
+      camera.getObject3D('camera').position.set(0, 8, 10);
+    }
+    break;
   }
-});
+}
 
 
 
@@ -95,11 +180,10 @@ function checkCameraChangeOnscroll(el) {
   }
   else if (scrollDir === "up") {
     if ((top - window.innerHeight) - scrollContainer.scrollTop < 0) {
+
         return("true");
     }
   }
-
-
 }
 
 

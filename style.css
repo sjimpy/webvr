@@ -288,7 +288,7 @@ section{
 #focusOnHome div{
   position: absolute;
   left: 50%;
-  top: 20%;
+  top: 10%;
   transform: translate(-50%, -50%);
   text-align: center;
 }
@@ -298,12 +298,15 @@ section{
 #focusOnHome a{
   position: absolute;
   left: 50%;
-  top: calc(90% - 1em);
+  top: calc(80% - 1em);
   transform: translate(-50%, -50%);
 }
 
 
-
+#a-surfboard1{
+  display: none !important;
+  opacity: 0;
+}
 
 
 .buttons {

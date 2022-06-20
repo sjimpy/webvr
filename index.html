@@ -47,16 +47,31 @@
 
           <!-- adding assets to the program -->
           <a-assets>
+
             <a-asset-item id="surfboard5" src="./models/surfboard5.obj"></a-asset-item>
-            <a-asset-item id="surfboard5-mtl" src="./models/surfboard5.mtl"></a-asset-item>
+            <img id="surfboard5Texture" src="./assets/board5.png">
+
 
             <a-asset-item id="schep" src="./models/schep.obj"></a-asset-item>
-            <a-asset-item id="schep-mtl" src="./models/schep.mtl"></a-asset-item>
+            <img id="scheptexture" src="./assets/scheptexture.png">
+
+
+            <a-asset-item id="shirt" src="./models/shirt.obj"></a-asset-item>
+            <img id="shirttexture" src="./assets/shirttexture.png">
+
+            <a-asset-item id="rightsneaker" src="./models/rightsneaker.obj"></a-asset-item>
+            <img id="rightsneakertexture" src="./assets/rightsneakertexture.png">
+
+            <a-asset-item id="leftsneaker" src="./models/leftsneaker.obj"></a-asset-item>
+            <img id="leftsneakertexture" src="./assets/leftsneakertexture.png">
           </a-assets>
 
           <!-- loading the assets inside the enviroment -->
-          <a-entity id="a-surfboard5" position="0 .7 -5" rotation="0 45 0" obj-model="obj: #surfboard5"></a-entity>
-          <a-entity id="a-schep" position="-5 .4 -5" scale=".05 .05 .05" rotation="-90 -135 0" obj-model="obj: #schep"></a-entity>
+          <a-entity id="a-surfboard5" position="4 .7 4" rotation="0 45 0" obj-model="obj: #surfboard5" material="src: #surfboard5Texture;"></a-entity>
+          <a-entity id="a-schep" position="4 .8 -4" scale=".05 .05 .05" rotation="-90 -135 0" obj-model="obj: #schep" material="src: #scheptexture"></a-entity>
+          <a-entity id="a-rightsneaker" position="-3 .15 5" scale=".05 .05 .05" rotation="-0 -135 0" obj-model="obj: #rightsneaker" material="src: #rightsneakertexture"></a-entity>
+          <a-entity id="a-leftsneaker" position="-5 .15 4" scale=".05 .05 .05" rotation="-0 -135 0" obj-model="obj: #leftsneaker" material="src: #leftsneakertexture"></a-entity>
+          <a-entity id="a-shirt" position="-4 -1 -4" scale="1.5 1.5 1.5" rotation="-0 -135 0" obj-model="obj: #shirt" material="src: #shirttexture"></a-entity>
         </a-scene>
 
         <section class="world3d" id="focusOnHome">
@@ -90,6 +105,16 @@
             </p>
             <a class="cta" href="https://jimmydekker.nl/">My portfolio</a>
 
+            <h3>Why did i choose this minor</h3>
+            <p>
+              I mainly chose this minor because i really liked virtual reality. Also one of the things i really want to know is how i can use 3d element inside a web-page, I've heard from different ways to do this but never had time to get into it.
+              I also had quite some cases of clients that wanted some sort of 360 product viewer. Till today i always used 360 images from every angle and replaced them on user interaction. I wanna know if its also possible to do this with a 3d model. And one final reason is my intrest in 3D printing. I already have one at home for a couple of years but im still downloading all my STL files from the Internet, so i think its time to figure out how to create my own 3d models.
+            </p>
+
+            <h3>My current knowledge</h3>
+            <p>
+              Even tho i got my own vr headset and a 3d printer i never really had the time to learn about the development or creation of assets. One time i've tried to follow a tutorial about making a pistol whip game in unity but i got stuck at building the world and gave up. I do have development experience but i mainly want to focus on 3d modeling and how to use them for web.
+            </p>
 
             <h3>Our team: Reality-Shift</h3>
             <p>
@@ -103,7 +128,10 @@
             </p>
             <a class="cta" href="https://reality-shift.nl/">Check out our team</a>
 
-
+            <h4>My team role</h4>
+            <p>
+              Our team consists of 3 game developers, one creative business student and me. Because i dont know much about vr development my role will not be very specific. Mainly i will focus on learning to model in blender and i will help a bit with concepting, UI and UX. So as you maybe already guessed i will focus Mostly on the things i do not already know.
+            </p>
             <h3>Pressure Cooker</h3>
             <p>
               To get the minor off to a good start, we started with a 2 week pressure cooker. In this we were introduced to the VR/XR world and we were introduced to the main tools and tricks that we will use in the coming semester.
@@ -113,7 +141,7 @@
             <a class="cta" href="https://jimmydekker.nl/preview-xr-pressurecooker/">Check out my Pressure Cooker</a>
 
 
-            <h3>Learning Goals</h3>
+            <h3>Learning Goals for this semester</h3>
             <p>
               To keep up with my developments within the minor, we have drawn up SMART learning objectives. With this you specify your learning objective Specific, Measurable, Achievable, Relevant and Time-Bound.
             </p>
@@ -156,11 +184,6 @@
         </section>
 
 
-        <!-- <section  class="world3d">
-
-        </section> -->
-
-
         <section>
           <span class="anchors" id="assets"></span>
           <div class="textcontainer">
@@ -169,8 +192,9 @@
               The assets category is mainly about developing 3d models and textures.
             </p>
             <h3>sprint 1</h3>
+            <h4>Learning goal</h4>
             <p>
-              In terms of assets, I mainly worked on my first 3d model with texture during this sprint.
+
             </p>
             <h4>Shovel model</h4>
             <p>
@@ -184,25 +208,25 @@
             <p>Finally I had a shovel with only 1,974 triangles and ready to texture:</p>
             <img src="./assets/schep3.png" class="img600">
             <h4>Shovel model with sand</h4>
-            <p>Om straks zand te kunnen opscheppen hebben we ook een model nodig met zand op de schep. Dit heb ik gedaan door een icosphere toe te voegen aan de scene en die te halveren:</p>
+            <p>In order to be able to shovel sand in the future, we also need a model with sand on the shovel. I did this by adding an icosphere to the scene and dividing it in half:</p>
             <img src="./assets/sand1.png" class="img600">
-            <p>vervolgens heb ik de z as van de sphere kleiner gemaakt en op de gewenste mannier op de schep gepositioneerd:</p>
+            <p>then I made the z axis of the sphere smaller and positioned it on the shovel in the desired way:</p>
             <img src="./assets/sand2.png" class="img600">
             <h4>textures</h4>
             <p>
-              Om een juiste uv map te krijgen ben ik begonnen met het markeren van bepaalde edges zodat de UV map op de juiste mannier unwrapped kan worden:
+              To get a correct uv map I started by marking certain edges so that the UV map can be unwrapped in the right way:
             </p>
             <img src="./assets/texture1.png" class="img600">
             <p>
-              Vervolgens heb ik het model geselecteerd en op unwrap gedrukt:
+              Then I selected the model and pressed unwrap:
             </p>
             <img src="./assets/texture2.png" class="img400">
             <p>
-              Deze template heb ik vervolgens gebruikt om hout texture en een rode kleur toe te voegen aan het model, Dit heb ik gedaan door een base color toe te voegen op basis van een image:
+              I then used this template to add a wood texture and a red color to the model. I did this by adding a base color based on an image:
             </p>
             <img src="./assets/texture3.png" class="img300">
             <p>
-              Dit was het eindresutlaat van mijn eerste 3d model:
+              This was the end result of my first 3d model:
             </p>
           </div>
         </section>
@@ -211,37 +235,43 @@
         </section>
         <section>
           <div class="textcontainer">
-            <h3>Sprint 2</h3>
+            <h4>Evaluation</h4>
             <p>
-              Voor de categorie assets ben ik deze sprint voornamelijk bezig geweest met het modelen van 5 verschillende surfboards.
+              <!-- hier moet evaliatie -->
+            </p>
+            <h3>Sprint 2</h3>
+            <h4>Learning goal</h4>
+            <p>
+              <!-- hier moet een goal -->
+              For the category assets I mainly spent this sprint modeling 5 different surfboards.
             </p>
             <h4>Surfboard inspiration</h4>
             <p>
-              Om de juiste vorm en verschillende modellen van de surfboarden te krijgen ben ik op zoek gegaan naar welke modellen er zijn. uiteingelijk heb ik deze afbeelding gebruikt om de vormen te maken.
+              To get the right shape and different models of the surfboards, I went looking for which models there are. In the end I used this image to make the shapes.
             </p>
             <img src="./assets/surfvorm.png" class="img600">
             <h4>Surfboards</h4>
-            <p>ik ben begonnen met een 2d overlay over de surfboarden om ze vervolgens te extruden naar de juiste dikte. Ook deze heb ik bepaald doormiddel van referentie afbeeldingen. Na deze stap had ik 5 platte borden:</p>
+            <p>I started with a 2d overlay over the surfboards and then extruded them to the right thickness. I also determined this by means of reference images. After this step I had 5 flat plates:</p>
             <img src="./assets/borden5.png" class="img600">
-            <p>Natuurlijk zijn surfboarden niet helemaal recht en heb ik ze allemaal een klein beetje krom getrokken:</p>
+            <p>Of course surfboards aren't quite straight and I've warped them all a little bit:</p>
             <img src="./assets/kromboard1.png" class="img100">
             <img src="./assets/kromboard2.png" class="img100">
             <h4>Surfboard fins</h4>
-            <p>Voor de vinnen leek het mij het makkelijkts om een model te maken en die te hetgebruiken in verschillende formaten op alle borden. Ook bij deze stap ben ik weer begonnen met een refference afbeeldingen om de vormen goed te krijgen:</p>
+            <p>For the fins I thought it would be easiest to make a model and use it in different sizes on all boards. Also at this step I started again with a reference images to get the shapes right:</p>
             <img src="./assets/finoverlay.png" class="img600">
-            <p>vervolgens heb ik alle vinnen aan de borden toegevoegd en samengesmolten tot 1 object:</p>
+            <p>Then I added all the fins to the boards and merged them into 1 object:</p>
             <img src="./assets/boardswithfins.png" class="img600">
             <h4>Surfboard uv maps</h4>
-            <p>Om de juiste Uv maps te krijgen heb ik alle naden weer op de zelfde mannier gemarkeerd als bij het schep model. Ik had bij deze modellen alleen wel moeite met de vinnen, uiteindelijk was dit geen probleem omdat die toch een solide kleur moesen worden.</p>
+            <p>To get the correct UV maps I marked all seams in the same way as with the shovel model. I only had trouble with the fins with these models, in the end this was no problem because they had to be a solid color.</p>
             <img src="./assets/uvmapboard.png" class="img400">
             <h4>Surfboard textures</h4>
-            <p>vervolgens ben ik op internet op zoek gegaan naar verschillende surfboard designs. Voor elk bord heb ik een ander design gemaakt:</p>
+            <p>Then I searched the internet for different surfboard designs. I made a different design for each plate:</p>
             <img src="./assets/board1.png" class="img190">
             <img src="./assets/board2.png" class="img190">
             <img src="./assets/board3.png" class="img190">
             <img src="./assets/board4.png" class="img190">
             <img src="./assets/board5.png" class="img190">
-            <h4>Het resultaat:</h4>
+            <h4>The Result:</h4>
           </div>
         </section>
         <section  class="world3d"  id="focusOnSurf">
@@ -251,57 +281,397 @@
 
 
 
+        <section>
+          <div class="textcontainer">
+            <img src="./assets/surfresults.png" class="img800">
+            <h4>Evaluation</h4>
+            <p>
+              <!-- hier moet evaliatie -->
+            </p>
+          <h3>Sprint 3</h3>
+          <h4>Learning goal</h4>
+          <p>
+            <!-- hier moet een goal -->
+            For the category assets I mainly spent this sprint Learning Clo 3d to model clothing.
+          </p>
+          <h4>Designing Clothes in Clo 3d</h4>
+          <p>
+            During the last few weeks Talitha mainly focussed on learning Clo-3d. Because she noticed that making the clothes costed more time than expected, i decited to help making some models. Because Talitha already did quite some research we decided to let her give us a smart class in designing clothing.
+          </p>
+          <img src="./assets/clo11.jpeg" class="img500">
+          <p>
+            Before we start making the model you have to find some cutouts of clothing. For my first shirt i used the above picture. Unfortunately i forgot making screenshots so i used a basic white clo shirt as an example from this point.
+          </p>
+          <img src="./assets/clo1.png" class="img800">
+          <p>
+            As you can see the clothing exist of 2d cutouts placed and folded in a 3d enviroment. You can make these cutouts by pressing the "polygon button" and start drawing the cutouts just like the pen tool in Photoshop.
+          </p>
+          <img src="./assets/cloex2.png" class="img800">
+          <p>
+            The next step is "segment sewing" all the edges of the clothing like im showing above. On the left side you can see the parts of fabric are nicely placed in the 3d enviroment. The colored are an indications og how the fabric will seem together when you press spacebar.
+          </p>
+          <h4>Adding the model</h4>
+          <p>
+            After some research i found out there are multiple ways to import a model. First i tried it with Auto convert avatar, this function resizes an exising model from Clo until it looks the same as your model. This way should be used if the mannequin should animate (because the Rig will be converted into your model).
+          </p>
+          <img src="./assets/clo2.png" class="img800">
+          <p>
+            unfortunately the previous way to import the model took quite some time. And because we aren't gonna use animations yet i decided to just inport the fbx file into Clo with the settings from above. As you can see the scale is 19.000% because for some reason the model that Hans created was really really tiny in Clo.
+          </p>
+          <img src="./assets/clo3.png" class="img800">
+          <p>
+            Now we have the mannequin and the model inside the scene.
+          </p>
+          <img src="./assets/clo4.png" class="img800">
+          <p>
+            The next ting we have to do is repositioning all the elements so they will fall correctly over the mannequin.
+          </p>
+          <h4>Live render the clothing</h4>
+
+          <video src="./assets/clo9.mp4" controls muted autoplay loop poster="./assets/clo9.png" class="img800"></video>
+          <p>
+            After the clothing is correctly placed you can start rendering by pressing space and pincing the clothing untill you're happy.
+          </p>
+            <h4>Evaluation</h4>
+            <p>
+              <!-- hier moet evaliatie -->
+            </p>
+          <h3>Sprint 4</h3>
+          <h4>Learning goal</h4>
+          <p>
+            <!-- hier moet een goal -->
+            For the category assets I mainly spent this sprint Learning modeling shoes and folded clothing.
+          </p>
+          <h4>Shoe modeling 2d start</h4>
+          <p>
+            To get this model started on the right foot, I searched the internet for tutorials about designing shoes in Blender. After watching a few videos: <a href="https://youtu.be/DncP3mKJB2M">Concept Shoe Modeling in Blender 2.92</a> seemed to me the most appropriate tutorial. I followed this until about 40:00 after which I did some things differently myself and did the rest of the process with my own knowledge and the help of teachers and other students.
+          </p>
+          <img src="./assets/schoen1.png" class="img800">
+          <p>
+           I started with a cube where I mirrored 2 faces. Because of this I only had to keep an eye on one side and the other side did exactly the same transformations.
+          </p>
+          <img src="./assets/schoen2.png" class="img800">
+          <p>
+            Then I added a reference photo of the side of the shoe I wanted to make (the reference photo is in the middle between the 2 mirrored boxes). I started to expand and move the compartments by means of extrudes on the bevels until I had imitated the side of the shoe in a logical way.
+          </p>
+          <img src="./assets/schoen3.png" class="img800">
+          <p>
+            Because the reference photo was not perfectly taken from the side and because shoes always bulge a bit in the middle, I gave the lines at the top a little bit of slack in the front.
+          </p>
+          <img src="./assets/schoen4.png" class="img800">
+          <p>
+            As soon as I was satisfied with the shape I looked up another reference photo but from the top. This allowed me to put the two sides at the correct distance from each other.
+          </p>
+          <h4>From 2d to 3d shoe</h4>
+          <img src="./assets/schoen5.png" class="img800">
+          <p>
+            The next step was to select the outer lines and those merch in the middle (extrude -> merch the middle vertexes).
+          </p>
+          <img src="./assets/schoen6.png" class="img800">
+          <p>
+            Now I could recreate the shape of the top.
+          </p>
+          <img src="./assets/schoen7.png" class="img800">
+          <p>
+            I did this by putting my viewport on the z-axis and making the model semi transparent. Now it was a matter of putting the vertexes in the right place.
+          </p>
+          <img src="./assets/schoen7.5.png" class="img800">
+          <p>
+            When I was satisfied with the shape, I opened up the opening of the shoe by removing the panels at the entrance. As you can see, the shoe now looks very flat. I solved this with Solidify, as you can see in the next image, this causes one layer to become a lot thicker. You can adjust this thickness yourself.
+          </p>
+          <h4>sole, shoe lip and labels</h4>
+          <img src="./assets/schoen8.png" class="img800">
+          <p>
+            The "sock" of the shoe was now in the correct shape so I could start making the extra parts. This was now easiest to do by copying, duplicating and extruding certain parts of the shoe. So for the lip I duplicated the top 4 panels (shift + D) and pulled it loose from the "sock" object (p -> separate). I also gave this lip thickness again by applying Solidify.
+          </p>
+          <img src="./assets/schoen9.png" class="img800">
+          <img src="./assets/schoen10.png" class="img800">
+          <p>
+            I detached the sole from the rest of the model in the same way and then pulled it down with extrude.
+          </p>
+          <img src="./assets/schoen11.png" class="img800">
+          <img src="./assets/schoen12.png" class="img800">
+          <p>
+            After this it was again a matter of putting the vertices in the right place using the top and side reference images.
+          </p>
+          <h4>Polish the model</h4>
+          <p>
+            After I got the overall shape of the shoe right, I made the surface more beautiful with the multiplier. Now the shoe looks great, but I was left with a lot of vertices.
+          </p>
+          <img src="./assets/schoen13.png" class="img800">
+          <p>
+            To solve this problem I started by semi-manually removing all the inner verteces so that the inside is completely hollow.
+          </p>
+          <img src="./assets/schoen14.png" class="img800">
+          <p>
+            Then I also removed the top layer of the sole and started removing all invisible lines from the inside.
+          </p>
+          <img src="./assets/schoen15.png" class="img800">
+          <p>
+            After this I attached the sole and the "sock" of the shoe together by merching the vertices.
+          </p>
+          <img src="./assets/schoen16.png" class="img800">
+          <p>
+            The next step was to remove unnecessary lines in the model. I mainly did this by selecting and removing complete loops of lines (option + click).
+          </p>
+          <img src="./assets/schoen17.png" class="img800">
+          <p>
+            In the meantime I have also added the seams to make the UV map (these are the red lines). Unfortunately I forgot to take pictures of that this time. Would you like to know how this works? then view <a href="http://127.0.0.1:3000/#textures12">Textures for the shovel</a>.
+          </p>
+          <img src="./assets/schoen18.png" class="img800">
+          <p>
+            I ended up with a small 1,425 vertices.
+          </p>
+          <h4>Uv mapping and texturing</h4>
+          <img src="./assets/schoen20.png" class="img800">
+          <p>The UV map finally looked like this. I later changed the size and location of certain elements (you can see this in the following image).</p>
+          <img src="./assets/schoen21.png" class="img800">
+          <p>Then I made the lines, colors, logos and shapes in photoshop and kept testing these on the model in blender.</p>
+          <img src="./assets/schoen22.png" class="img800">
+          <img src="./assets/schoen23.png" class="img800">
+          <h4>Final result:</h4>
+          <img src="./assets/schoen24.png" class="img800">
+        </div>
+        </section>
+
+        <section  class="world3d"  id="focusOnShoe">
+
+        </section>
 
         <section>
-          <span class="anchors" id="uxui"></span>
           <div class="textcontainer">
+            <h4>Evaluation</h4>
+            <p>
+              <!-- hier moet evaliatie -->
+            </p>
+            <h3>Sprint 5</h3>
+            <h4>Learning goal</h4>
+            <p>
+              <!-- hier moet een goal -->
+              For this spint i didn't make many new models but added some improvements to the current models.
+            </p>
+            <h4>Issues with the current models</h4>
+            <img src="./assets/improvement1.png" class="img800">
+            <p>When we started using the Shoe models i notced a few small issues with the shoes that i wanted to improve.
+            First of all, one of the shoes has some kind of weird inverted texture (only in Unity not in Blender), second of all the other shoe is invisible from the inside, and the last thing came up during the portfolio talks in school but there was some improvement needed for the uv map.</p>
+            <h4>Fixing inverted texture</h4>
+            <img src="./assets/improvement2.png" class="img800">
+            <p>For the first issue i tool some time to search for the issue on Google. After a while i found a simular issue on: <a href="https://blenderartists.org/t/inverted-texture/593196">blenderartists.org</a>. To fix this issue i just had to select the inverted model in edit mode and press (option + n) and click Rectangulate Outside. This function rotates the faces of the object to the outside.</p>
+            <h4>Fixing transparent inside</h4>
+            <img src="./assets/improvement3.png" class="img800">
+            <p>A simple solution for me to fix the invisible inside was to fill up the hole. Unfortunately i couldn't find a way to texture the inside differently without making it much more heavy. So i desited to just fill up the hole with one face and texture it black. I selected the opening with (option + click), then extruded the edge and scaled it a bit smaller like the picture above.</p>
+            <img src="./assets/improvement4.png" class="img800">
+            <p>The next step was mercing the verticies in the middle. and move them down.</p>
+            <img src="./assets/improvement5.png" class="img800">
+            <p>This way i only added 2 verticies and the holes are closed.</p>
+            <img src="./assets/improvement6.png" class="img800">
+            <p>The next step was adding the new added faced to the uv map, i did this by only selecting the new faces, unwrap them and move them to the same space as the sole.</p>
+            <img src="./assets/improvement7.png" class="img800">
+            <p>At the end i finished up with 2 nice models that are not transparent or inverted.</p>
+
+            <h4>Improving the Uv maps</h4>
+            <p>In the previous edits i ended up with the uv map, so this seemd like a great time to improve those to.</p>
+            <img src="./assets/improvement8.png" class="img800">
+            <p>During one of the talks with Alexander (our model teacher), he told me that there were some improvements possible with the uv maps. Currently i used way to much space for a solid black part and not enough space for the detailed part of the shoe (like the top part).</p>
+            <img src="./assets/improvement9.png" class="img500">
+            <p>So i started repositioning some specific parts of the shoe till the layout made more sence in space use.</p>
+            <img src="./assets/improvement10.png" class="img500">
+            <p>This is the uv map i ended up with, as you can see i made more use of the space. Now the sock of the shoe and the label can be quite a bit bigger.</p>
+            <h4>Result:</h4>
+          </div>
+        </section>
+
+        <section  class="world3d"  id="focusOnShoe2">
+
+        </section>
+
+        <section>
+          <div class="textcontainer">
+            <h4>More clo clothing</h4>
+            <p>
+              Last sprint i mainly focussed on the modeling of the shoes and folded states of the clothing. Now it really was time to finish the clo models.
+              I ended last time with rendering the clothing the right way. Now its time to create the UV-Map.
+            </p>
+            <img src="./assets/clo10.png" class="img800">
+            <p>
+              I did this to switch to the UV EDITOR and starten laying al the parts out in the first square. At first i didn't know this was needed but after exporting the first time i noticed the model had 4 UV maps. So after a while of messing arround, one of my teachers (Emma) explained me that this was necessary.
+            </p>
+            <img src="./assets/clo24.png" class="img300">
+            <p>
+              I exported the object with the previous settings (i used this screenshot for all future exports so i know the settings are right).
+            </p>
+            <img src="./assets/clo11.png" class="img800">
+            <p>
+              The Next thing i did was importing the FBX file into blender.
+            </p>
+            <img src="./assets/clo12.png" class="img800">
+            <p>
+              I checked if the model was right (many times this was not the case). So i had to reopen Clo-3d again and do manny manny adjustments.
+            </p>
+            <h4>Making the textures</h4>
+            <img src="./assets/clo13.png" class="img800">
+            <p>
+              Eventually i got the model right and started creating the textures. This model was quite straight forward. Just adding some fabric in the right color.
+            </p>
+            <img src="./assets/clo14.png" class="img800">
+            <p>
+              meanwhile i rechecked the model if everything was still looking good.
+            </p>
+            <img src="./assets/clo15.png" class="img800">
+            <p>
+              Then i added the letters on the shirt with some filters to blend it in nicely.
+            </p>
+            <h4>Result</h4>
+            <img src="./assets/clo16.png" class="img800">
+            <p>
+              I was really happy with the result. I think the tshirt really looks like the one from the website.
+            </p>
+          </div>
+        </section>
+
+        <section  class="world3d"  id="focusOnShirt">
+
+        </section>
+
+        <section>
+          <div class="textcontainer">
+            <img src="./assets/clo17.png" class="img800">
+            <p>
+              The next step was creating a extra texture to the folded version. I just basicly created one texture with only the base texture. I think this would do the job and give users the idea that they are holding a folded version of the clothing.
+            </p>
+            <img src="./assets/clo18.png" class="img800">
+            <p>
+              Then i repeated the whole proces again and made the brown version of the shirt. also for this shirt i was really happy with the end result.
+            </p>
+            <h4>More dificult models</h4>
+            <p>
+              The next model i started working on these pants. Talitha did already do the cutouts for this one so i continued with nicely laying out de 2D elements arround the 3D mannequin.
+            </p>
+            <img src="./assets/clo19.png" class="img800">
+            <p>
+              I started thoing this by moving and rotating the elements in the right place.
+            </p>
+            <img src="./assets/clo20.png" class="img800">
+            <p>
+              When the parts where in the right place, i started exporting but i found out that the model was 1.600.000 vertices.
+            </p>
+            <img src="./assets/clo22.png" class="img800">
+            <p>
+              After a long time of searching i found out the stiches where also rendered as 3d objects. Containing 160+ verticies per stitch.
+            </p>
+            <img src="./assets/clo23.png" class="img800">
+            <p>
+              So i removed all stiches from the clothing (i also tried exporting them as texture but for some reason they didn't change).
+            </p>
+            <img src="./assets/clo25.png" class="img800">
+            <p>
+              I also made this Fanienne Chapot blouse. This one was a lot more dificult to make because of the loose pieces.
+            </p>
+            <h4>Evaluation</h4>
+            <p>
+              <!-- hier moet evaliatie -->
+            </p>
+          </div>
+        </section>
+        <section>
+          <div class="textcontainer">
+            <span class="anchors" id="uxui"></span>
             <h2>UX-UI Design</h2>
             <p>
               The UX-UI design category is mainly about designing specific interactions between the user and the vr experience.
             </p>
             <h3>sprint 1</h3>
+            <h4>Learning goal</h4>
             <p>
+              <!-- hier moet een goal -->
               During this sprint I was mainly busy brainstorming and developing our idea through storyboards.
             </p>
             <h4>Brainstorm</h4>
-            <p>De brainstom hebben we met het gehele team gedaan, dit deden we doormiddel van de crazy 8. Daarna hebben we alle ideeën verder uitgewerkt en een concept op de glazen wand getekend.</p>
+            <p>We did the brainstom with the entire team, we did this by means of the crazy 8. After that we worked out all the ideas further and drew a concept on the glass wall.</p>
             <img src="./assets/brainstorm.jpeg" class="img800">
             <h4>Storyboard 1</h4>
-            <p>vervolgens ben ik aan de slag gegaan met het uitwerken van de volgende 2 storyboards.</p>
+            <p>
+              Then I started working on the next 2 storyboards.
+            </p>
             <img src="./assets/storyboard1.png" class="img800">
+            <p>
+              I did't really wanted to spend to much time on the storyboard (so many other intresting things to learn). So at first i tried to make the story board in an online generator. Unfortunately i was not really happy with the result (i think i can't really get my imagination going if i use remplates). So i desited to draw another one myself.
+            </p>
             <h4>Storyboard 2 (final concept)</h4>
             <img src="./assets/storyboard2.png" class="img800">
-            <a href="https://docs.google.com/document/d/19tgaW1zwoFaErF1rK0PQf5J4SWy01TQ1PYdU3jxXDps/edit#heading=h.vk4vhpiwr52v" class="cta">check the user journey</a>
+            <p>
+              <ol>
+                <li>De gebruiker zet vanuit de winkel of elke andere mogelijke locatie de VR headset op en komt in de in de Chase VR Lobby.</li>
+                <li>De lobby geeft een gevoel van vernieuwing en daagt de gebruiker uit om de omgeving te gaan ontdekken.</li>
+                <li>De gebruiker loopt rond en ziet dat de lobby aangesloten zit aan verschillende onderdelen van de ervaring. Bij het eerste onderdeel die hij/zij ziet staat een muur bestaande uit blok etalages voor de verschillende collecties.</li>
+                <li>De collectie blok etalages kunnen d.m.v. een interactie worden uitgekozen. De gekozen blok etalage kan vervolgens worden geplaatst in een lege template blok. Zo verandert het grote lege template blok in de gekozen collectie.</li>
+                <li>Als het gekozen blok is geplaatst starten de paspoppen uit het collectie blok met lopen over de catwalk die voor de muur staat. De paspoppen dragen dan de kleding uit de gekozen collectie.</li>
+                <li>De paspoppen die over de catwalk lopen kunnen met een knop worden stilgezet. Zo kan de gebruiker per paspop beter de kleding bekijken die de paspop aan heeft. Als de gebruiker een kledingstuk wilt selecteren, is dit mogelijk door met dezelfde interactie als hiervoor. Het geselecteerde kledingstuk kan op een eigen paspop worden geplaatst. Of direct in het digitale mand blok worden gedaan.</li>
+                <li>De gebruiker is zo tevreden met de outfit op de paspop / in het mand blok dat hij/zij besluit om de outfit te kopen. Dit kan de klant doen door het mand blok met de interactie te plaatsen in de virtuele versie van de kassa.</li>
+                <li>De virtuele kassa zit samen met een virtuele versie van het Chase Café. Zo krijgt de klant al een indruk van de uitstraling en sfeer van de Chase Concept Store.</li>
+                <li>Verder in de lobby ziet de gebruiker de mogelijkheid om sfeer gerelateerd entertainment te beleven en eventueel promoties te winnen.</li>
+                <li>Na het spelen van een aantal spelletjes besluit de gebruiker dat het tijd is voor de volgende gebruiker en zet de headset af. Een paar minuten later komt er een mailtje binnen met  (als dat mogelijk is) een linkje naar de webshop of de individuele producten van Chase die in de virtuele winkelmand zaten.</li>
+              </ol>
+            </p>
+            <br>
+            <!-- <a href="https://docs.google.com/document/d/19tgaW1zwoFaErF1rK0PQf5J4SWy01TQ1PYdU3jxXDps/edit#heading=h.vk4vhpiwr52v" class="cta">check the user journey</a> -->
+            <h4>Evaluation</h4>
+            <p>
+              <!-- hier moet evaliatie -->
+            </p>
           </div>
         </section>
 
         <section>
           <div class="textcontainer">
             <h3>sprint 2</h3>
+            <h4>Learning goal</h4>
             <p>
-              voor deze sprint wilde ik er achter komen op welke afstanden teksten en objecten nog goed zijn te lezen in vr.
+              <!-- hier moet een goal -->
+              for this sprint I wanted to find out at which distances texts and objects can still be read well in vr.
             </p>
             <h4>distance checker</h4>
             <p>
-              Omdat we in onze ervaring de blok etalages in verschillende formaten willen weergeven: medium in de blok muur, klein als je hem pakt en groot als hij actief is bij de catwalk.
-              Leek het mij handig om een klein experimentje te doen en te testen op welke afstanden sommige formaten blokken te groot of te klein waren. Dit heb ik gemaakt in een apparte scene in unity.
+              Because in our experience we want to display the block windows in different sizes: medium in the block wall, small when you pick it up and large when it is active on the catwalk.
+              I thought it would be useful to do a little experiment and test at what distances some block sizes were too big or too small. I made this in a separate scene in unity.
             </p>
             <img src="./assets/distance.png" class="img600">
             <h4>model</h4>
-            <p>Om te beginnen heb ik het blok model een beetje aangepast met letters en deze in 6 verschillende formaten gescaled.</p>
+            <p>To start with I modified the block model a bit with letters and scaled it in 6 different sizes.</p>
             <img src="./assets/dozen6.png" class="img600">
             <h4>tests</h4>
-            <p>voor de test hebben we meerdere mensen in deze scene gezet en de instructie gegeven om de kleur en afstand te zeggen op het moment dat de tekst tussen de groene en rode lijn leesbaar is.</p>
+            <p>For the test, we put several people in this scene and instructed them to say the color and distance when the text between the green and red lines is legible.</p>
             <h4>result</h4>
             <p>
               For some reason the results are blocked by google, im still in contact with the service team trying to recover them.
             </p>
             <img src="./assets/error.png" class="img600">
+            <h4>Evaluation</h4>
+            <p>
+              <!-- hier moet evaliatie -->
+            </p>
           </div>
         </section>
 
 
 
+        <!-- dit moet je nog doen! -->
+        <!-- <section>
+          <div class="textcontainer">
+            <h3>sprint 3</h3>
+            <h4>Learning goal</h4>
+            <p> -->
+              <!-- hier moet een goal -->
+              <!-- for this sprint I wanted to find out at which distances texts and objects can still be read well in vr.
+            </p>
+            <h4>user test on location</h4>
+            <h4>Evaluation</h4>
+            <p> -->
+              <!-- hier moet evaliatie -->
+            <!-- </p>
+          </div>
+        </section> -->
+        <!-- dit moet je nog doen! -->
 
 
         <section>
@@ -312,78 +682,145 @@
               The development category is mainly about building the vr experience.
             </p>
             <h3>sprint 1</h3>
+            <h4>Learning goal</h4>
             <p>
+              <!-- hier moet een goal -->
               For development I have been busy recording the animation for the mannequin, setting up a webvr environment, making the team website and uploading my work on the github branch.
             </p>
             <h4>website workshop</h4>
-            <p>Om onze persoonlijke ontwikkeleling binnen dit project bij te houden moeten we deze portfolio website bijhouden. Om de rest van het team verder te helpen met de bouw van de website heb ik aangeboden om een dag een workshop te geven over de basis opzet van een website. Dit hebben we gedaan doormiddel van HTML CSS en JS. Daarbij heb ik een aantal links doorgestuurd die ze tijdens het verder bouwen van de website kunnen helpen.</p>
+            <p>In order to keep track of our personal development within this project, we need to maintain this portfolio website. To help the rest of the team with the construction of the website, I offered to give a workshop for a day on the basic design of a website. We did this using HTML CSS and JS. In addition, I have forwarded a number of links that can help them during the further building of the website.</p>
             <img src="./assets/code.png" class="img600">
-            <p>Doormiddel van felle kleuren kon ik makkelijk uitleggen hoe de cotnainers in elkaar zitten en hoe het positioneren van de elementen werkt.</p>
+            <p>By means of bright colors I can easily explain how the cotnainers are put together and how the positioning of the elements works.</p>
             <img src="./assets/site.png" class="img600">
             <p>
-              Een aantal van de sites die ik heb meegegeven en heb behandeld als bron zijn:<br>
-              <a href="https://www.w3schools.com/html/html_elements.asp">HTML element overview.</a><br>
-              <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Viewport_meta_tag">Meta viewport tagg.</a><br>
-              <a href="https://www.w3schools.com/css/css_rwd_mediaqueries.asp">Media query's.</a><br>
+              Some of the sites I've provided and treated as a resource are:<br>
+              <a href="https://www.w3schools.com/html/html_elements.asp">HTML element overview</a><br>
+              <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Viewport_meta_tag">Meta viewport tagg</a><br>
+              <a href="https://www.w3schools.com/css/css_rwd_mediaqueries.asp">Media query's</a><br>
               <a href="https://the-echoplex.net/flexyboxes/">Flexboxes</a>
             </p>
             <h4>Record mannequin animation</h4>
             <p>
-              Om de kleding op de mannequins te kunnen animeren en de mannequins over de catwalk te laten lopen hebben we animaties nodig die we kunnen riggen. Dit zijn we gaan doen met het motion tracking suit van <a href="https://neuronmocap.com/content/axis-neuron?gclid=Cj0KCQjwmPSSBhCNARIsAH3cYga07BwCfB8J1AUsCCUmLuDU2PVKRvrgn382gCwdY3DvroUYTHGRR28aAqwXEALw_wcB">Perception Neuron</a>
-              We hebben de quickstart guide gebruikt voor de installatie en het aantekken van het pak:
+              To be able to animate the clothes on the mannequins and to make the mannequins walk on the catwalk, we need animations that we can rigg. This is what we are going to do with the motion tracking suit from <a href="https://neuronmocap.com/content/axis-neuron?gclid=Cj0KCQjwmPSSBhCNARIsAH3cYga07BwCfB8J1AUsCCUmLuDU2PVKRvrgn382gCwdY3DvroUYTHGRR28aAqwXEALw_wcB">Perception Neuron</a>
+              We used the quickstart guide for the installation and donning of the suit:
             </p>
             <img src="./assets/terrence.JPG" class="img190">
             <video src="./assets/terrence.mp4" controls muted autoplay loop poster="./assets/terrence.png" class="img190"></video>
             <p>
-              En vervolgens het programma zelf uitgevogeld. Uiteindelijk zijn we geindigd met een aantal animaties waaronder:
+              And then figured out the program itself. In the end we ended up with a number of animations including:
             </p>
             <video src="./assets/rig.mp4" controls muted autoplay loop poster="./assets/rig.png" class="img600"></video>
             <p>
-              Tijdens de installatie kwamen we er achter dat alle electronische apparaten uit de buurt van het pak moesten zijn. Als we dat niet deden dan werkte bepaalde sensoren niet.
+              During the installation we learned that all electronic devices had to be away from the suit. If we didn't, certain sensors wouldn't work.
             </p>
             <h4>Web vr research</h4>
             <p>
-              Een van mijn leerdoelen was het leren van web vr, omdat ik dat niet binnen ons project kan doen heb ik besloten om het te gebruiken bij dit portfolio.
-              Om te beginnen ben ik op zoek gegaan naar javascript libraries die helpen bij het maken van een vr website.
-              De voornamelijkste zijn:
+              One of my learning goals was to learn web vr, because I can't do that within our project I decided to use it with this portfolio.
+              To start with, I went looking for javascript libraries that help to create a vr website.
+              The main ones are:
               <a href="#">React VR</a>
               <a href="#">A-frame </a>
               and
               <a href="#">three.js</a>.
-              Uiteindelijk heb ik gekozen voor A-Frame omdat ik we achter kwam dat daar een hele handige inspector bij zit waarin je live de wereld kan ontwerpen. Voor het installeren en gebruiken van de three.js heb ik de volgende tutorial gebruikt:
+              In the end I chose A-Frame because I found out that it comes with a very handy inspector in which you can design the world live. To install and use the three.js I used the following tutorial:
               <a href="https://www.youtube.com/watch?v=-Q_FIByQUAI">Aframe Webvr - VR Development Part 1 - Setting Up</a>.<br>
-              Om te leren hoe de inspector en enviroment builder werkt heb ik de volgende video gebruikt:
+              To learn how the inspector and environment builder works I used the following video:
               <a href="https://www.youtube.com/watch?v=K_1RdCVuu98">Easy Environment in A-Frame (beginner tutorial)</a>
+              <p>During development I found out that the vr function was not working. After some research it turned out that this was because WebGL is not yet supported on IOS.</p>
               <p>
-                Wil je zien hoe de site in elkaar zit? Bekijk dan de code op Github:
-                <a href="#" class="cta">Bekijk op github</a>
+                Do you want to see how the site works? Then check out the code on Github:<br>
+                <a href="https://github.com/sjimpy/webvr" class="cta">View on github</a>
               </p>
             </p>
             <h4>team website</h4>
+            <p>
+              To keep the progress of our team project and all the links in one place, I made a Reality shift page.
+               I made the site with HTML, CSS and JS. For the particle animation I used:
+              <a href="https://vincentgarreau.com/particles.js/">particle.js</a>.
+            </p>
+            <br>
+            <a href="https://reality-shift.nl/" class="cta">Check out Reality-shift.nl</a>
             <h4>github with sourcetree</h4>
+            <p>
+              For the development of our project we use github.
+               I have used Github itself before, but to learn something new I started using Sourcetree this time. Thomas taught me and Thalita how this works. Not to forget, I've recorded a video of the process:
+            </p>
+            <video src="./assets/sourcetree.mp4" controls muted autoplay loop poster="./assets/sourcetree.png" class="img600"></video>
+            <h4>Evaluation</h4>
+            <p>
+              <!-- hier moet evaliatie -->
+            </p>
           </div>
         </section>
 
         <section>
           <div class="textcontainer">
             <h3>sprint 2</h3>
+            <h4>Learning goal</h4>
             <p>
-              deze sprint ben ik qua development vooral bezig geweest met het fixen van de webvr experience.
+              <!-- hier moet een goal -->
+              In terms of development, I was mainly busy fixing the webvr experience during this sprint. And making the animation of the distance check.
             </p>
             <h4>Rotate around objects</h4>
+            <p>
+              Because I found out while making the site that the VR function doesn't work on IOS yet, I decided to only make the world visible from a 3th person perspective. The idea is that the camera can rotate around the objects. I managed this with the following code:
+            </p>
+            <img src="./assets/camera.png" class="img190">
             <h4>Change camera position on scroll</h4>
+            <p>
+              After the camera was added i wanted to change the camera position based on the scrollposition of the site. I fixed this by writing the following code:
+            </p>
+            <img src="./assets/change.png" class="img400">
+            <p>
+              this code basicly checks the scrollposition of the container element. If the container element is almost in view the camera position gets updated within the setAtribute.
+            </p>
+            <h4>Result:</h4>
           </div>
         </section>
+        <section  class="world3d" id="focusOnAll">
 
+        </section>
         <section>
           <div class="textcontainer">
-            <h3>sprint 3</h3>
+            <h4>Distance checker animation</h4>
             <p>
+              To get the blocks closer and closer to the user, I made an animation in Unity where the blocks jump every 10 seconds. The animation timeline looked like this:
+            </p>
+            <img src="./assets/unityanimation.png" class="img800">
+            <p>
+              As you can see I do this by changing the x position.
+            </p>
+            <h4>Evaluation</h4>
+            <p>
+              <!-- hier moet evaliatie -->
+            </p>
+
+            <h3>sprint 4</h3>
+            <h4>Learning goal</h4>
+            <p>
+              <!-- hier moet een goal -->
               hier komt text over dingen die ik in sprint 3 heb gedaan
             </p>
             <h4>textures on web models</h4>
+            <p>
+              Now the system was fully running it was time to add the textures on the models. At first i started to look for a solution at <a href="https://aframe.io/docs/1.3.0/components/material.html">aframe.io</a>. Unfortunately i didn't really got my awnser on this page so i started googling. Eventually i found this page: <a href="https://stemkoski.github.io/A-Frame-Examples/">stemkoski.github.io</a>. I checked the "image texture" example and inspected the page:
+            </p>
+            <img src="./assets/textures.png" class="img800">
+            <p>
+              So basicly i had to add a img to the assets and put the id of it inside the material attribute. So thats what i did:
+            </p>
+            <h4>My solution</h4>
+            <img src="./assets/textures2.png" class="img800">
+            <p>
+              As you can see, i added the #scheptexture to the a-assets and to the material of de a-enrity. Basicly this did the job, that was a lot faster than i anticipated. If you wanna see the result click <a href="./#TheResult:22">here</a>.
+            </p>
+            <h4>Evaluation</h4>
+            <p>
+              <!-- hier moet evaliatie -->
+            </p>
           </div>
         </section>
+
 
 
         <section>
@@ -391,32 +828,198 @@
           <div class="textcontainer">
             <h2>Visual Design</h2>
             <p>
-              The visual category mainly concerns the appearance of the vr experience, such as the map design.
+              The visual category mainly concerns the appearance of the vr experience, such as the environment design.
             </p>
             <h3>sprint 1</h3>
+            <h4>Learning goal</h4>
             <p>
-              During this sprint I have mainly been working on the basic design of the map, which includes:
+              <!-- hier moet een goal -->
+              During this sprint I have mainly been working on the basic design of the environment, which includes:
             </p>
             <h4>colors</h4>
-            <h4>map designs</h4>
+            <p>
+              Because we haven't had time to visit on location yet, we have asked for a load of photos on which we can base the colors.
+               We have had a number of images and have divided them into 5 different categories:
+            </p><br>
+            <p>beach colors:</p>
+            <img src="./assets/beach.png" class="img600">
+            <p>cafe colors:</p>
+            <img src="./assets/cafe.png" class="img600">
+            <p>outside store colors:</p>
+            <img src="./assets/outside.png" class="img600">
+            <p>inside store colors:</p>
+            <img src="./assets/inside.png" class="img600">
+            <p>inside green accents:</p>
+            <img src="./assets/green.png" class="img600">
+            <p>
+              To make these color palettes I took the main colors in photoshop and processed them with <a href="https://coolors.co/">coolors.co</a>.
+            </p>
             <h4>moodboard catwalk</h4>
-            <h4>map prototypes</h4>
+            <p>
+              To start designing the environment, we first work out the catwalk. This was a logical order for us because the catwalk is the most important part of our experience and we wanted it to be central to the layout.
+               During the brainstorming session with Hans, we first started collecting images:
+            </p>
+            <img src="./assets/catwalk.png" class="img600">
+            <h4>environment designs</h4>
+            <p>
+               When designing the environment (this mainly concerned a logical layout for our concept) I divided our concept into a number of parts. First I started with random layouts, but I soon found out that this didn't quite work. That's why I signed up for the environment design class.
+               Because our preference for the catwalk was already moving more towards something circular, I was advised to experiment with circular environment design. This way I could organize the environment in a more logical way and part of the experience is always visible to the user.
+               To start with, I made 3 sketches with the elements scattered in a different way but with the catwalk in the center:
+            </p>
+            <img src="./assets/mapdesign3.png" class="img300"><br>
+            <img src="./assets/mapdesign1.png" class="img300"><br>
+            <img src="./assets/mapdesign2.png" class="img300">
+            <h4>environment prototypes</h4>
+            <p>
+              Then I started working out these designs in Blender so that we could get a better picture of the environment:
+            </p>
+            <img src="./assets/mapsfake.png" class="img800"><br>
+            <h4>Evaluation</h4>
+            <p>
+              <!-- hier moet evaliatie -->
+            </p>
           </div>
-        </section>
-
-
-        <section  class="world3d" id="focusOnMaps">
-
         </section>
 
 
         <section>
           <div class="textcontainer">
             <h3>sprint 3</h3>
+            <h4>Learning goal</h4>
             <p>
+              <!-- hier moet een goal -->
               hier komt tekst voor sprint 3
             </p>
             <h4>Assets hunt on location</h4>
+            <p>
+              To get a better idea of what the Chase store looks like, we went to Kijkduin with the whole group and took pictures of the store and the surrounding area. We also checked for textures and specific models for inside the store.<br><br>
+              I will show a few images, 360 images and lidar scans we made, if you want to see all the images we collected check out our drive.
+            </p>
+            <img src="./assets/fotoshoot1.JPG" class="img300">
+            <img src="./assets/fotoshoot2.JPG" class="img300">
+            <img src="./assets/fotoshoot3.JPG" class="img300">
+            <img src="./assets/fotoshoot4.JPG" class="img300">
+            <img src="./assets/fotoshoot5.JPG" class="img300">
+            <img src="./assets/fotoshoot6.JPG" class="img300">
+            <img src="./assets/fotoshoot7.JPG" class="img300">
+            <h4>Lidar scans</h4>
+            <p>We also wanted to test some new functions of the Iphone 13 and made a few Lidar scans for inspiration and maybe to have a headstart when we want to model some of the elements.</p>
+            <img src="./assets/lidar.png" class="img800">
+            <p>These are some of the scans we made, its quite funny to see the details on the table. This way of scanning assets is fun to do but the ammount of verticies is way too high.</p>
+            <img src="./assets/lidar2.png" class="img800">
+            <h4>360 images</h4>
+            <p>
+              I also brought a 360 camera, so we could shoot some nice enviroment pictures. I also wanted to see if we could use some of these as a skybox.
+            </p>
+            <img src="./assets/treesixtie.png" class="img800">
+            <p>This an example of one of the pictures we could use to get inspiration.</p>
+            <img src="./assets/treesixtie2.png" class="img800">
+            <p>This an example of one of the pictures we could use for a skybox.</p>
+            <br>
+            <a class="cta" href="https://drive.google.com/drive/folders/1yaf6kpxgZi9FQaYfwaHYwCz8HRStOmY4?usp=sharing">All Images on our Drive</a>
+            <h4>Evaluation</h4>
+            <p>
+              <!-- hier moet evaliatie -->
+            </p>
+
+            <h2>Teamwork</h2>
+            <p>
+              To crank up the team spirit we also decided to do some of the assignments together. Starting with concepting, Testing days (also at Chase at Kijkduin), Asset hunts and presentations.
+            </p>
+            <h4>Sprint reviews</h4>
+            <p>
+              another thing we did every sprint was a sprint review. For me this was something new and it seemd kind of useless at the beginning. But after some sprints i saw these days as a nice way for sharing usefull feedback or concerns.
+            </p>
+            <img src="./assets/sprint1.png" class="img400">
+            <img src="./assets/sprint2.png" class="img400">
+            <img src="./assets/sprint3.png" class="img400">
+            <img src="./assets/sprint4.png" class="img400">
+            <p>
+              So basicly we had 4 categories: TOP, TIP, PUZZLE and RISKS. Then we all took some time to write down as many things you could come up with. Folowing by talking about it and ordering them by importantness (we determine that by sticking 5 stickers each).<br> Then every member took one of the 5 tasks to monitor so we could check if we improved or not.
+            </p>
+            <h4>Test and foto days</h4>
+            <p>
+              I already told you about the asset hunt day, but we also did a testing day. We organized this with some other students that where also doing some assignment for Chase. Unfortunately i can't find the results anymore but i do have some nice pictures and video's to show what we did:
+            </p>
+            <img src="./assets/test1.jpeg" class="img800">
+            <img src="./assets/test2.jpeg" class="img400">
+            <video src="./assets/test3.mp4" controls muted autoplay loop poster="./assets/test3.jpeg" class="img400"></video>
+            <p>
+              So we made 2 spots where we could test our experience. At the same time the students from the other group where collecting awnsers for our survey.<br><br>
+              We got some really nice results and we got some insights we would't get from the usertests at school (mainly from the older people).
+            </p>
+            <h4>Clo moddeling</h4>
+            <p>
+              For clo i mainly worked together with Talitha. She focussed on it for the first 3 sprints and then we noticed that we needed more hands to finish some clothing. There was still not really a proces for making the clothing so i took some time to re-organize the file structure and make a list with clothing we wanted to make.
+            </p>
+            <img src="./assets/proces1.png" class="img190">
+            <p>
+              So i just folowed these 6 folders: first saving the clo files (just in case), then export the fbx file to folder 2 and texture to folder 4, then imported the fbx into blender and created the texture in photoshop, then created the folded texture and as the last step collecting the fbx, texture and folded texture and updating it to the drive.
+            </p>
+            <img src="./assets/proces2.png" class="img800">
+            <p>
+              So i made this list so we would know who was working on what model and so we could see the progress of the clothing.
+            </p>
+            <h2>Minor Evaluation</h2>
+            <h3>Overacting Learning goals</h3>
+            <h4>Goal 1</h4>
+            <p>At the end of this semester I want to be able to independently make 3d models that can be used in VR and therefore not too many triangles. I want to get the knowledge for this learning goal from the courses of teachers, information on the internet and the experience of my classmates.</p>
+            <br>
+            <ul>
+              <li><span>specific: </span>I want to learn to independently make 3d models and textures.</li>
+              <li><span>Measurable: </span>The 3d models must be usable on a quest 2 so no more than 50,000 triangles per object.</li>
+              <li><span>Achievable: </span>Through the lessons at school, my own research and the help of my project group.</li>
+              <li><span>Relevant: </span>I want to learn this because we need models for our experience and to experiment with my 3d printer.</li>
+              <li><span>Time-Bound: </span>At the end of this semester.</li>
+            </ul>
+            <h4>Result Goal 1</h4>
+            <p>
+              I really think i passed on this learning goal. Im able to create my own 3d models now and even tried 3d printing my own models. A few weeks ago i needed a lid for my terarium, normaly i would search the internet but this time i was able to design and print my own. That was exactly what i wanted to be able to.
+            </p>
+
+            <h4>Goal 2</h4>
+            <p>I want to learn how web vr development works through desk research and experimentation. I want to be able to load at least 1 self-made model including the textures. I would like to learn this to expand my development knowledge and to be able to display my models in a browser.</p>
+            <br>
+            <ul>
+              <li><span>specific:</span> I want to learn how to use 3d (vr) in web development.</li>
+              <li><span>Measurable:</span> This learning objective has been achieved when I have been able to make a 3d world with at least 1 homemade model including textures.</li>
+              <li><span>Achievable:</span> Through desk research.</li>
+              <li><span>Relevant:</span> I want to learn this to expand my web development knowledge and to be able to show my models on a browser.</li>
+              <li><span>Time-Bound:</span> At the end of this semester.</li>
+            </ul>
+            <h4>Result Goal 2</h4>
+            <p>
+              Also this learning goal worked out great. Because we didn't really used web vr in our porject, i took some time to make sure i could reach this goal by adding the 3d viewer to my portfolio page. I've learnd how to make use of different camera positions and was able to add multiple models including the textures. In the future i might reuse this knowledge if i need any 3d animations or interactions.
+            </p>
+
+            <h4>Goal 3</h4>
+            <p>I want to learn how to design a map that conveys the desired atmosphere through lessons and tests. The map must be substantiated and I want to learn this so that I know how to create beautiful environments before the end of this semester.</p>
+            <br>
+            <ul>
+              <li><span>specific:</span> I want to learn how to design a map that exudes the desired atmosphere.</li>
+              <li><span>Measurable:</span> The map must be substantiated and must have been thought through.</li>
+              <li><span>Achievable:</span> Through Emma's lessons and through AB testing.</li>
+              <li><span>Relevant:</span> I want to learn this so that I can participate in the design of our vr experience.</li>
+              <li><span>Time-Bound:</span> At the end of this semester.</li>
+            </ul>
+            <h4>Result Goal 3</h4>
+            <p>
+              This goal is kinda done. I did worked with Hans on the enviroment but after 3 designs, Hans already made 8 of them. I also didn't really liked it because it just took me way to much time, that i prefered spending on moddeling objects instead of enviroments. So Hans eventually continued creating the admosphere.
+            </p>
+
+            <h3>My minor experience</h3>
+            <p>
+              I really liked the minor. at first i thought one semester would be a bit long to focus on one subject but the amount of subjects to learn kept the minor very interesting. I am quite happy about the percentage that i spend on each subject. In the beginning i thought i would work more in development but after the pressurecooker i knew i wanted to focus more on assets and web vr (and thats what i did). For UX-UI Design and visual design i Mostly helped teammates but didn't really go into it. I did that on purpose because i already did this every other project and now it felt like a chance to explore some new things.
+            </p>
+            <h4>What would i do different</h4>
+            <p>
+              I think the most dificult thing for me was that i was not familiar with a normal game developers proces. This ment for me that i would learn a new way of working but also ment i had to get used to the flow. Because of this i found it dificult to have an overview of all the tings our team was doing (normaly i alwais have that). Because of this we could have been more efficient if we would have made the finel clo model a lot earlier. This time the model changed multiple times and because of that we had to redo some models 3 times. I also found out that Chase did send us some quite difficult clothing. And like that we also had some other small things where should keep in mind for future projects. But overall i think we did a lot of nice things.
+            </p>
+            <h4>What would i do the same</h4>
+            <p>
+              Because of that i also wanted to tell you what i would do the same. I think the overall Communication between our teammembers was extremely good. I think everyone was very willing to learn (even tho we had sometimes very different backgrounds). I also think the way we made our workspace was very nice. It felt very much like a real company when we had our own website, this also made all our stuff like github, google drive, trello and Miro very easy to find.<br><br>
+              We also had a few "training" days where teammates would teach eachother some of their skills. So at the end this minor was a succes and i learned alot from it.
+            </p>
           </div>
         </section>
 
